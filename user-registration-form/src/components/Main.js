@@ -48,14 +48,19 @@ class Main extends React.Component {
         if(event.target.name === "register"){
             event.preventDefault()
             console.log("registered!! Save State Data")
-            axios.post('http://localhost:3004/user-profiles',{
+            axios.post('http://localhost:3004/user-profiles',
+            {
                 firstName: this.state.firstName,
                 lastName:this.state.lastName,
-                emailId:this.state.emailId},
-                { auth:{
-                username: this.state.username,
-                password:this.state.password
-            }})
+                emailId:this.state.emailId 
+            },
+            { 
+                auth:{
+                    username: "this.state.username",
+                    password:"this.state.password",
+                }
+            }
+            )
             .then(respons => {console.log(respons)})
             .catch(error => {console.log(error)})
         }
