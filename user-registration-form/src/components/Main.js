@@ -10,15 +10,17 @@ class Main extends React.Component {
       super(props);
         this.state = {
            userData:{ 
-            isSignUp:false,
-            isSignIn:false,
-            isRegister:false,
-            isLogIn:false,
-            firstName:"",
-            lastName:"",
-            emailId:"",
-            username:"",
-            password:"",           
+              firstName:"",
+              lastName:"",
+              emailId:"",
+              username:"",
+              password:"",           
+        },
+           flags:{
+              isSignUp:false,
+              isSignIn:false,
+              isRegister:false,
+              isLogIn:false                        
         }
     }
         this.handleClick = this.handleClick.bind(this)
@@ -27,7 +29,8 @@ class Main extends React.Component {
 
     handleClick(event){
         console.log("button is clickeds")
-        let dataU = this.state.userData
+        let dataU =  this.state.userData.firstName
+        console.log(this.state.flags)
         if (event.target.name === "isSignUp"){
             this.setState({
                 isSignUp : true,
@@ -45,9 +48,16 @@ class Main extends React.Component {
         if(event.target.name === "register"){
             event.preventDefault()
             console.log("registered!! Save State Data")
-            axios.post('https://jsonplaceholder.typicode.com/users', dataU)
+            axios.post('http://localhost:3004/user-profiles',{
+                firstName: this.state.firstName,
+                lastName:this.state.lastName,
+                emailId:this.state.emailId},
+                { auth:{
+                username: this.state.username,
+                password:this.state.password
+            }})
             .then(respons => {console.log(respons)})
-            .then(data => {console.log(data)})
+            .catch(error => {console.log(error)})
         }
 
         if(event.target.name === "login"){

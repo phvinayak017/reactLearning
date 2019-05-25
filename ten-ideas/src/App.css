@@ -1,0 +1,19 @@
+.App {
+  text-align: center;
+}
+
+.textHeader {
+  width: 50%;
+  height: 15%;
+  left: 0%;
+  margin-left: 18%;
+  margin-top: 7%;
+  padding: 8%;
+  background: #e7e7e7;
+  text-align: center;
+}
+
+.textDisplay {
+  margin: 0%;
+  padding: 0%;
+}
