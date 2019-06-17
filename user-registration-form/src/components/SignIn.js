@@ -59,9 +59,9 @@ export class SignIn extends Component {
     } )
     
    
-    console.log(userProfile, isDone)
+    console.log(isDone.length )
 
-     if(isDone){
+     if(isDone.length != 0 ){
       console.log("Login Matched")
       this.setState({
          LogInMatched:true
@@ -74,8 +74,6 @@ export class SignIn extends Component {
     }
    this.props.history.push("/success")
   }
-     
-
 
   handleClickSignUp =(event) =>{
     event.preventDefault()
@@ -83,7 +81,6 @@ export class SignIn extends Component {
     this.props.history.push("/signup")
   }
  
-  
   render() {
     return (
       <div className = "signupMain"> 
@@ -95,7 +92,6 @@ export class SignIn extends Component {
           <Password value = {this.password} onChange = {this.handleChange}/>
         </form>
          <Button onClick = {this.handleClickSignIn} buttonName = "SignIn" />  
-  
          <p className="text">or, Please Sign Up</p> 
          <Button onClick = {this.handleClickSignUp} buttonName = "SignUp" />    
       </div>
