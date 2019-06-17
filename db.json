@@ -1,21 +1,27 @@
 {
   "user-profiles": [
     {
-      "firstName": "sdfsdfds",
-      "lastName": "sdfsdf",
-      "emailId": "asdfdsfds",
+      "firstName": "asdfdsf",
+      "lastName": "asdfdsf",
+      "emailId": "asdfsdf",
+      "username": "asfdsf",
+      "password": "adfdsf",
       "id": 1
     },
     {
-      "firstName": "asdfdsf",
-      "lastName": "sd",
-      "emailId": "sadf",
+      "firstName": "Vinayak ",
+      "lastName": "Hulabutti",
+      "emailId": "Vinayak.hulabutti@gmail.com",
+      "username": "phvinayak59",
+      "password": "Qwerty!@#4",
       "id": 2
     },
     {
-      "firstName": "ddsffsdsdfd",
-      "lastName": "sdfsdfsdf",
-      "emailId": "sdfsdfsdfsdf",
+      "firstName": "a",
+      "lastName": "a",
+      "emailId": "a",
+      "username": "qw",
+      "password": "qw",
       "id": 3
     }
   ]

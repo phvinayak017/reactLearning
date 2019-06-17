@@ -1,11 +1,17 @@
-import React from 'react'
+import React from "react";
 
-function Username (props){
-    return (
-      <div>
-         <input type="text" placeholder = " Usename*" name = "usernam" value = {props.username}/>
-      </div>
-    )
+function Username(props) {
+  return (
+    <div>
+      <input
+        type="text"
+        placeholder=" Username*"
+        name="username"
+        value={props.username}
+        onChange = {props.onChange}
+      />
+    </div>
+  );
 }
 
-export default Username
+export default Username;

@@ -5,6 +5,7 @@ import Button from './Button'
 import axios from 'axios'
 
 
+
 class Main extends React.Component {
     constructor(props) {
       super(props);
@@ -56,8 +57,8 @@ class Main extends React.Component {
             },
             { 
                 auth:{
-                    username: "this.state.username",
-                    password:"this.state.password",
+                    username: this.state.username,
+                    password: this.state.password,
                 }
             }
             )
@@ -67,8 +68,9 @@ class Main extends React.Component {
 
         if(event.target.name === "login"){
             event.preventDefault()
-            console.log("Enter Account")      
-           
+            console.log("Enter Account")  
+            // axios.get('http://localhost:3004/user-profiles')
+            // .then(response => console.log(response.data.username))           
         }
     }
 
@@ -77,9 +79,7 @@ class Main extends React.Component {
         this.setState({
             [name]:value
         })
-    
-    }
-    
+    } 
   render() {
     return (
         <div className = "signupMain">            
