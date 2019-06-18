@@ -43,6 +43,9 @@ export class SignIn extends Component {
   handleClickSignIn =(event) =>{
     event.preventDefault()
     console.log("signin clicked")
+    this.setState({
+      LogInMatched:false
+    })
    /*  const isCompared = this.state.userData.map((user) =>{
       console.log(user.username, user.password)
       return ((this.state.username === user.username && this.state.password === user.password) ? true : false)
@@ -63,6 +66,7 @@ export class SignIn extends Component {
 
      if(isDone.length != 0 ){
       console.log("Login Matched")
+      this.props.history.push("/success")
       this.setState({
          LogInMatched:true
        })
@@ -71,8 +75,9 @@ export class SignIn extends Component {
       this.setState({
         LogInMatched :false
      })
+     alert("Please check your username or password")
     }
-   this.props.history.push("/success")
+  
   }
 
   handleClickSignUp =(event) =>{
