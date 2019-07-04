@@ -12,6 +12,7 @@ import Successful from './components/Successful';
 const routing =(
     <Router>
         <div>
+
             <ul className = "singin">
                 <li>
                     <Link to ="/">Home</Link>
@@ -22,7 +23,7 @@ const routing =(
                 <li>
                     <Link to ="/signup">Sign Up</Link>
                 </li>
-            </ul>   
+            </ul>
                     <Route path = "/" component = {App}  />
                     <Route path = "/signin"  component = {SignIn} />
                     <Route path = "/signup" component = {SignUp} />
