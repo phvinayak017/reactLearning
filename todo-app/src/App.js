@@ -65,7 +65,7 @@ handleClick =(e) =>{
         <button onClick ={this.handleClick}>Add</button>
       
       {
-        this.state.todos.map((todo) =>{
+          this.state.todos.map((todo) =>{
           return (<p key = {todo.id} > <input type="checkbox" onChange = {this.handleCheckbox} id = {todo.id}/> {todo.title}</p>)
         })
       }
