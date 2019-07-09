@@ -1,0 +1,25 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "firstName": "Vinayak ",
+    "lastName": "Hulabutti",
+    "userName": "phvinayak017",
+    "emailId": "phvinayak059@gmail.com",
+    "password": "Qwerty!@#4",
+    "dateOfBirth": "10/07/2019",
+    "experience": 9
+  }
+}
