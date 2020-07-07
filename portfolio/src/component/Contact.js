@@ -25,7 +25,7 @@ function Contact() {
         <Grid item xs={6}>
           <div className={classes.formStyle}>
             <Typography variant="h3" align="left">
-              Drop us a Line
+              Drop me a Line
             </Typography>
             <Form />
           </div>
