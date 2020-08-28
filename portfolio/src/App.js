@@ -29,34 +29,21 @@ function App() {
   return (
     <div className={classes.root}>
       <Router>
-        <Grid container spacing={2}>
+        <Grid container spacing={5}>
           <Grid item md={4} container justify="center">
+            <Grid item md = {4}></Grid>
+            <Grid item md = {8}>
             <h2 className="logo">
               <NavLink activeStyle={{ color: '#55009b' }} to="/">
                 OPENVIKI
               </NavLink>
             </h2>
+            </Grid>
+
+            
           </Grid>
           <Grid item md={8} className={classes.headerNav}>
             <Grid container justify="flex-end" spacing={6}>
-              {/* <Grid item md={2}>
-                <NavLink
-                  className={classes.navbarItems}
-                  activeStyle={{ color: 'blueviolet' }}
-                  to="/home"
-                >
-                  Home
-                </NavLink>
-              </Grid>
-              <Grid item md={2}>
-                <NavLink
-                  className={classes.navbarItems}
-                  activeStyle={{ color: 'blueviolet' }}
-                  to="/about"
-                >
-                  About
-                </NavLink>
-              </Grid> */}
               <Grid item md={2}>
                 <NavLink
                   className={classes.navbarItems}

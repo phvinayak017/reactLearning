@@ -67,7 +67,7 @@ const pageStyle = makeStyles({
     textAlign: 'center',
   },
   image: {
-    maxWidth: '55vw',
+    maxWidth: '45vw',
     height: 'auto',
     marginLeft: '12vw',
     marginTop: '15vh',

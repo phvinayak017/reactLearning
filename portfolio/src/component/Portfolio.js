@@ -7,29 +7,29 @@ import Image3 from '../assets/ProjectImages/Project3.jpg'
 import Image4 from '../assets/ProjectImages/Project4.jpg'
 import { Grid } from '@material-ui/core/';
 
-const styles = {
-    pageStyle: {
-        overflowY: "hidden"
-    }
-}
+// const styles = {
+//     pageStyle: {
+//         // overflowY: "hidden"
+//     }
+// }
 
 function Portfolio() {
 
     return (
-        <div style={styles.pageStyle} >
-            <Grid container spacing={40}>
+        <div >
+            <Grid container spacing={4}>
                 <Grid item>
                     {/* <PortfolioComponent /> */}
                     <PortfolioComponent2
-                        title1="Project Iron Man"
+                        title1="Logistics Portal"
                         Image1={Image1}
-                        title2="Project Black Panther"
+                        title2="D-Mart Fleet Management"
                         Image2={Image2}
                     />
                     <PortfolioComponent2
-                        title1="Project Iron Man"
+                        title1="Fleet Management Portal"
                         Image1={Image3}
-                        title2="Project Black Panther"
+                        title2="Bit-Coin Trading Platform"
                         Image2={Image4}
                     />
                 </Grid>

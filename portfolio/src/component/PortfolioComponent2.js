@@ -39,7 +39,7 @@ function PortfolioComponent2(props) {
   return (
     <div>
       <Grid container spacing={10}>
-        <Grid item xs={5}>
+        <Grid item md={5}>
           <div className={classes.section1}>
             <Typography className={classes.textColor} gutterBottom variant="h4">
               {props.title1}
@@ -61,7 +61,7 @@ function PortfolioComponent2(props) {
             </div>
           </div>
         </Grid>
-        <Grid item xs={7}>
+        <Grid item md={7}>
           <img className="projectImage2" src={props.Image1} alt="image" />
         </Grid>
       </Grid>
