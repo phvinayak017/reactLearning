@@ -97,7 +97,7 @@ function Home() {
         {/* <Typography className={classes.sub2}> SKILLS :</Typography> */}
         <Typography align={'left'} className={classes.sub3}>
           Javascript | ReactJS | Python | GraphQL | Material UI | Cypress | HTML
-          | CSS | . . .
+          | CSS | Tailwind CSS | . . .
         </Typography>
       </Grid>
       <Grid item container md={7} justify="flex-start">

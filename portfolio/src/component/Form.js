@@ -11,6 +11,8 @@ import InputLabel from '@material-ui/core/InputLabel'
 import TextField from '@material-ui/core/TextField'
 import FormControl from '@material-ui/core/FormControl'
 import { green } from '@material-ui/core/colors'
+import { Button, Grid } from '@material-ui/core'
+import { useState } from 'react'
 
 const CssTextField = withStyles({
   root: {
@@ -78,41 +80,89 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(1),
     width: '25vw',
   },
+  button: {
+    marginTop: '2rem',
+    padding: '0.5rem 3rem',
+  },
 }))
 
-export default function Form() {
+export default function Form(props) {
+  const {
+    firstName,
+    lastName,
+    emailId,
+    note,
+    setEmailId,
+    setFirstName,
+    setLastName,
+    setNote,
+    handleSubmit,
+  } = props
+
   const classes = useStyles()
 
   return (
     <div>
       <div className={classes.root}>
-        <CssTextField
+        <TextField
           className={classes.margin}
-          id="custom-css-standard-input"
+          id="std-firstname"
           label="First Name"
+          name="firstName"
+          value={firstName}
+          onChange={(e) => setFirstName(e.target.value)}
         />
       </div>
       <div className={classes.root}>
-        <CssTextField
+        <TextField
           className={classes.margin}
-          id="custom-css-standard-input"
+          id="std-lastname"
           label="Last Name"
+          name="lastName"
+          value={lastName}
+          onChange={(e) => setLastName(e.target.value)}
         />
       </div>
       <div className={classes.root}>
-        <CssTextField
+        <TextField
           className={classes.margin}
-          id="custom-css-standard-input"
+          id="std-emailId"
           label="Email id"
+          name="emailId"
+          value={emailId}
+          onChange={(e) => setEmailId(e.target.value)}
         />
       </div>
       <div className={classes.root}>
-        <CssTextField
+        <TextField
           className={classes.margin}
-          id="custom-css-standard-input"
-          label="Address"
+          id="std-note"
+          label="Requirements"
+          multiline
+          rows={4}
+          name="note"
+          value={note}
+          onChange={(e) => setNote(e.target.value)}
         />
       </div>
+      {
+        <Button
+          variant="contained"
+          color="primary"
+          className={classes.button}
+          onClick={handleSubmit}
+          disabled={
+            !firstName ||
+            firstName === '' ||
+            !lastName ||
+            lastName === '' ||
+            !emailId ||
+            emailId === ''
+          }
+        >
+          Submit
+        </Button>
+      }
     </div>
   )
 }
