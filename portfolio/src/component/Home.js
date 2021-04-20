@@ -76,33 +76,30 @@ function Home(props) {
   // }, [])
 
   return (
-    <Grid container>
-      <Grid item md={5}>
-        <Typography variant="h2" align={'left'} className={classes.heading}>
+    <div class="space-y-12 px-12 py-10 lg:px-36 lg:flex lg:justify-between lg:items-center lg:space-x-12 lg:pt-36">
+      <div class="space-y-6">
+        <div class="text-6xl font-bold text-pink-500 lg:text-7xl">
           Hi, I'm Vinayak P H
-        </Typography>
-        <Typography align={'left'} className={classes.sub1}>
-          {/* Seasoned Product Designer and Developer with over 5 years of
-          experience in education start-ups. My work focuses on UI, UX, and
-          Front-End Development. */}
-          1X Enterprenuer, Product Designer and UI Developer with over a 6 years
-          of experience in Start-ups. My work focus on UI, UX and Fron-End
+        </div>
+        <div class="text-lg font-extralight">
+          1X Enterprenuer, product designer and UI developer with over a 6-years
+          of experience in start-ups. My work focus on UI, UX and Web
           Developmnet.
-        </Typography>
-        <Typography align={'left'} className={classes.sub1}>
+        </div>
+        <div class="text-lg font-extralight">
           If I'm not designing or coding or adjusting pixels, you would find me
-          in Gym, Cooking, Brewing, or playing UKE.
-        </Typography>
-        {/* <Typography className={classes.sub2}> SKILLS :</Typography> */}
-        <Typography align={'left'} className={classes.sub3}>
+          in practicing power-lifting, cooking, brewing, or playing UKE.
+        </div>
+        {/* <div className={classes.sub2}> SKILLS :</div> */}
+        <div class="text-lg font-medium">
           Javascript | ReactJS | Python | GraphQL | Material UI | Cypress | HTML
           | CSS | Tailwind CSS | . . .
-        </Typography>
-      </Grid>
-      <Grid item container md={7} justify="flex-start">
-        <img className={classes.image} src={Image} alt="Source" />
-      </Grid>
-    </Grid>
+        </div>
+      </div>
+      <div>
+        <img src={Image} alt="Source" class="w-screen" />
+      </div>
+    </div>
     // </div>
   )
 }

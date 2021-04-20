@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import {
   BrowserRouter as Router,
   Link,
@@ -35,6 +35,12 @@ const useStyles = makeStyles((theme) => ({
 
 function App() {
   const classes = useStyles()
+  const [isNavButton, setIsNavButton] = useState(false)
+
+  const handleNavigationMenu = () => {
+    console.log(isNavButton)
+    setIsNavButton(!isNavButton)
+  }
 
   useEffect(() => {
     ReactGA.initialize('G-M89EWSEY5J')
@@ -42,51 +48,58 @@ function App() {
   }, [])
 
   return (
-    <div className={classes.root}>
+    <div class="">
       <Router>
-        <Grid container spacing={5}>
-          <Grid item md={4} container justify="center">
-            <Grid item md={4}></Grid>
-            <Grid item md={8}>
-              <h2 className="logo">
-                <NavLink activeStyle={{ color: '#55009b' }} to="/">
-                  OPENVIKI
-                </NavLink>
-              </h2>
-            </Grid>
-          </Grid>
-          <Grid item md={8} className={classes.headerNav}>
-            <Grid container justify="flex-end" spacing={6}>
-              <Grid item md={2}>
-                <NavLink
-                  className={classes.navbarItems}
-                  activeStyle={{ color: 'blueviolet' }}
-                  to="/portfolio"
-                >
-                  WORK
-                </NavLink>
-              </Grid>
-              <Grid item md={2}>
-                <NavLink
-                  className={classes.navbarItems}
-                  activeStyle={{ color: 'blueviolet' }}
-                  to="/blogs"
-                >
-                  BLOGS
-                </NavLink>
-              </Grid>
-              <Grid item md={2}>
-                <NavLink
-                  className={classes.navbarItems}
-                  activeStyle={{ color: 'blueviolet' }}
-                  to="/contact"
-                >
-                  CONTACT
-                </NavLink>
-              </Grid>
-            </Grid>
-          </Grid>
-        </Grid>
+        <div class="z-10 md:flex md:justify-between px-12 lg:px-36">
+          <div class="text-4xl font-bold py-8 flex justify-between">
+            <div text="">
+              <NavLink activeStyle={{ color: '#55009b' }} to="/">
+                OPENVIKI
+              </NavLink>
+            </div>
+            <div class="outline-none md:hidden">
+              <button
+                class="text-3xl text-purple-800 cursor-pointer focus:outline-none px-3"
+                onClick={handleNavigationMenu}
+              >
+                {isNavButton ? 'X' : '='}
+              </button>
+            </div>
+          </div>
+          <div
+            class={`${
+              isNavButton ? 'block' : 'hidden'
+            } text-purple-800 text-lg w-screen md:flex md:w-5/12 md:justify-between md:space-x-2 md:items-center lg:w-4/12`}
+          >
+            <div class="py-4 cursor-pointer">
+              <NavLink
+                className={classes.navbarItems}
+                activeStyle={{ color: 'blueviolet' }}
+                to="/portfolio"
+              >
+                Work
+              </NavLink>
+            </div>
+            <div class="py-4 cursor-pointer">
+              <NavLink
+                className={classes.navbarItems}
+                activeStyle={{ color: 'blueviolet' }}
+                to="/blogs"
+              >
+                Blogs
+              </NavLink>
+            </div>
+            <div class="py-4 cursor-pointer">
+              <NavLink
+                className={classes.navbarItems}
+                activeStyle={{ color: 'blueviolet' }}
+                to="/contact"
+              >
+                Contact
+              </NavLink>
+            </div>
+          </div>
+        </div>
         <Route exact path="/" component={Home} />
         {/* <Route path="/home" component={Home} /> */}
         {/* <Route path="/about" component={About} /> */}

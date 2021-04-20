@@ -102,54 +102,45 @@ export default function Form(props) {
   const classes = useStyles()
 
   return (
-    <div>
-      <div className={classes.root}>
-        <TextField
-          className={classes.margin}
-          id="std-firstname"
-          label="First Name"
-          name="firstName"
-          value={firstName}
-          onChange={(e) => setFirstName(e.target.value)}
-        />
-      </div>
-      <div className={classes.root}>
-        <TextField
-          className={classes.margin}
-          id="std-lastname"
-          label="Last Name"
-          name="lastName"
-          value={lastName}
-          onChange={(e) => setLastName(e.target.value)}
-        />
-      </div>
-      <div className={classes.root}>
-        <TextField
-          className={classes.margin}
-          id="std-emailId"
-          label="Email id"
-          name="emailId"
-          value={emailId}
-          onChange={(e) => setEmailId(e.target.value)}
-        />
-      </div>
-      <div className={classes.root}>
-        <TextField
-          className={classes.margin}
-          id="std-note"
-          label="Requirements"
-          multiline
-          rows={4}
-          name="note"
-          value={note}
-          onChange={(e) => setNote(e.target.value)}
-        />
-      </div>
-      {
-        <Button
-          variant="contained"
-          color="primary"
-          className={classes.button}
+    <div class="space-y-4">
+      <input
+        id="std-firstname"
+        placeholder="First Name"
+        name="firstName"
+        value={firstName}
+        onChange={(e) => setFirstName(e.target.value)}
+        class="border-pink-400 border-b-2 w-10/12 py-2 px-1 outline-none"
+      />
+
+      <input
+        id="std-lastname"
+        placeholder="Last Name"
+        name="lastName"
+        value={lastName}
+        onChange={(e) => setLastName(e.target.value)}
+        class="border-pink-400 border-b-2 w-10/12 py-2 px-1 outline-none"
+      />
+
+      <input
+        id="std-emailId"
+        placeholder="Email id"
+        name="emailId"
+        value={emailId}
+        onChange={(e) => setEmailId(e.target.value)}
+        class="border-pink-400 border-b-2 w-10/12 py-2 px-1 outline-none"
+      />
+
+      <input
+        id="std-note"
+        placeholder="Note"
+        name="note"
+        value={note}
+        onChange={(e) => setNote(e.target.value)}
+        class="border-pink-400 border-b-2 w-10/12 py-2 px-1 outline-none"
+      />
+
+      <div class="py-4">
+        <button
           onClick={handleSubmit}
           disabled={
             !firstName ||
@@ -159,10 +150,11 @@ export default function Form(props) {
             !emailId ||
             emailId === ''
           }
+          class="px-8 py-2 bg-purple-700 text-gray-50 border-purple-700 focus:outline-none"
         >
           Submit
-        </Button>
-      }
+        </button>
+      </div>
     </div>
   )
 }

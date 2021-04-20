@@ -59,23 +59,24 @@ function Contact() {
     setLastName('')
     setEmailId('')
     setNote('')
+    setTimeout(() => {
+      setIsSent(false)
+    }, 5000)
   }
 
   return (
     <div>
-      <Grid container spacing={10} justify="flex-start">
+      <div class="px-12 lg:px-36">
         {isSent && (
-          <Grid item md={12}>
+          <div item md={12}>
             <Typography align="center" variant="h5" color="primary">
               {successMessage}
             </Typography>
-          </Grid>
+          </div>
         )}
-        <Grid item xs={6}>
-          <div className={classes.formStyle}>
-            <Typography variant="h3" align="left">
-              Drop me a Line
-            </Typography>
+        <div class="lg:flex lg:justify-between lg:items-center lg:space-x-10">
+          <div class="space-y-6 py-6">
+            <div class="text-3xl text-pink-500">Drop me a Line</div>
             <Form
               firstName={firstName}
               lastName={lastName}
@@ -88,11 +89,13 @@ function Contact() {
               setNote={setNote}
             />
           </div>
-        </Grid>
-        <Grid item xs={6}>
-          <img className={classes.image} src={Image} alt="" />
-        </Grid>
-      </Grid>
+          <img
+            src={Image}
+            alt="contact"
+            class=" hidden lg:inline-block w-6/12"
+          />
+        </div>
+      </div>
     </div>
   )
 }

@@ -26,12 +26,12 @@ function Portfolio() {
             title2="D-Mart Fleet Management"
             Image2={Image2}
           />
-          <PortfolioComponent2
+          {/* <PortfolioComponent2
             title1="Fleet Management Portal"
             Image1={Image3}
             title2="Bit-Coin Trading Platform"
             Image2={Image4}
-          />
+          /> */}
         </Grid>
       </Grid>
     </div>
