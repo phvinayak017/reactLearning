@@ -1,5 +1,12 @@
-import React from 'react'
-import { BrowserRouter as Router, Link, Route, NavLink } from 'react-router-dom'
+import React, { useEffect } from 'react'
+import {
+  BrowserRouter as Router,
+  Link,
+  Route,
+  NavLink,
+  withRouter,
+  Switch,
+} from 'react-router-dom'
 import About from './component/About'
 import Portfolio from './component/Portfolio'
 import Contact from './component/Contact'
@@ -7,6 +14,8 @@ import Home from './component/Home'
 import './App.css'
 import Blogs from './component/Blogs'
 import { Grid, makeStyles } from '@material-ui/core'
+
+import ReactGA from 'react-ga'
 
 // Style
 const useStyles = makeStyles((theme) => ({
@@ -26,6 +35,12 @@ const useStyles = makeStyles((theme) => ({
 
 function App() {
   const classes = useStyles()
+
+  useEffect(() => {
+    ReactGA.initialize('G-M89EWSEY5J')
+    ReactGA.pageview(window.location.pathname + window.location.search)
+  }, [])
+
   return (
     <div className={classes.root}>
       <Router>
@@ -82,5 +97,7 @@ function App() {
     </div>
   )
 }
+
+// const App = withRouter(App1)
 
 export default App

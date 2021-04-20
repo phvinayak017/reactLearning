@@ -62,13 +62,17 @@ function PortfolioComponent2(props) {
           </div>
         </Grid>
         <Grid item md={7}>
-          <img className="projectImage2" src={props.Image1} alt="image" />
+          <img className="projectImage2" src={props.Image1} alt="imageasdfj" />
         </Grid>
       </Grid>
 
-      <Grid container spacing={40}>
+      <Grid container spacing={10}>
         <Grid item xs={7}>
-          <img className="projectImage3" src={props.Image2} alt="image" />
+          <img
+            className="projectImage3"
+            src={props.Image2}
+            alt="imageasdfjkh"
+          />
         </Grid>
         <Grid item xs={5}>
           <div className={classes.section2}>

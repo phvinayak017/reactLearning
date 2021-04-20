@@ -10,6 +10,7 @@ import Image1 from '../assets/ProjectImages/project1.jpg'
 import Image2 from '../assets/ProjectImages/Project2.jpg'
 import Image3 from '../assets/ProjectImages/Project3.jpg'
 import Image4 from '../assets/ProjectImages/Project4.jpg'
+import { withRouter } from 'react-router-dom'
 
 const useStyles = makeStyles({
   cardContainer: {
@@ -26,13 +27,13 @@ function Blogs(props) {
   return (
     <div>
       <Grid container spacing={2} justify="center">
-        <Grid item xs={6} md={4}>
+        <Grid item xs={12} md={4}>
           <BlogComponent Image={Image1} />
         </Grid>
-        <Grid item xs={6} md={4} className={classes.card}>
+        <Grid item xs={12} md={4} className={classes.card}>
           <BlogComponent Image={Image2} />
         </Grid>
-        <Grid item xs={6} md={4} className={classes.card}>
+        <Grid item xs={12} md={4} className={classes.card}>
           <BlogComponent Image={Image3} />
         </Grid>
       </Grid>
@@ -40,4 +41,4 @@ function Blogs(props) {
   )
 }
 
-export default Blogs
+export default withRouter(Blogs)

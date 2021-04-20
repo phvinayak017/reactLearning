@@ -1,16 +1,9 @@
-import React, { Component } from 'react'
+import React, { Component, useEffect } from 'react'
 import { Grid, Typography, CardMedia, Card } from '@material-ui/core/'
 import { makeStyles } from '@material-ui/core/styles'
-import Icon from '@material-ui/core/Icon'
 import Image from '../assets/Images/prog3.svg'
-// import Image from '../assets/Images/pic.jpg'
-import icon_html from '../assets/icons/html.png'
-import icon_css from '../assets/icons/css.png'
-import icon_react from '../assets/icons/react_1.png'
-import icon_js from '../assets/icons/js.png'
-import icon_python from '../assets/icons/python.png'
-import icon_xd from '../assets/icons/xd.png'
-import icon_ps from '../assets/icons/ps.png'
+import { withRouter } from 'react-router-dom'
+// import ReactGA from 'react-ga'
 
 const pageStyle = makeStyles({
   heading: {
@@ -74,8 +67,14 @@ const pageStyle = makeStyles({
   },
 })
 
-function Home() {
+function Home(props) {
   const classes = pageStyle()
+  console.log('reac props', props)
+  // useEffect(() => {
+  //   ReactGA.initialize('G-M89EWSEY5J')
+  //   ReactGA.pageview(window.location.pathname + window.location.search)
+  // }, [])
+
   return (
     <Grid container>
       <Grid item md={5}>
@@ -101,11 +100,11 @@ function Home() {
         </Typography>
       </Grid>
       <Grid item container md={7} justify="flex-start">
-        <img className={classes.image} src={Image} alt="image" />
+        <img className={classes.image} src={Image} alt="Source" />
       </Grid>
     </Grid>
     // </div>
   )
 }
 
-export default Home
+export default withRouter(Home)
